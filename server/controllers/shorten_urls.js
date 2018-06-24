@@ -9,10 +9,16 @@ function createShortURL(req, res) {
 }
 
 function removeURL(req, res) {
-    console.log(req.body);
-    ShortenURLs.removeURL(req.body.short, (err, result) => {
-        res.status(200).json(result);
-        });
+    ShortenURLs.getStatsOfShortURL(req.params.short, (err, result) => {
+        if (req.query.creator_id === result[0].creator_id){
+            ShortenURLs.removeURL(req.body.short, (err, result) => {
+                res.status(200).json(result);
+            });
+        }
+        else{
+            res.status(403).json({err:"access denied"})
+        }
+    });
 }
 
 function getFullURL(req, res) {
@@ -23,11 +29,15 @@ function getFullURL(req, res) {
 }
 
 function getStatsOfShortURL(req, res) {
-    console.log(req.params);
+    console.log(req.query);
     ShortenURLs.getStatsOfShortURL(req.params.short, (err, result) => {
-        console.log(result);
-        res.status(200).json({stats:result[0].stats});
-        });
+        if (req.query.creator_id === result[0].creator_id){
+            res.status(200).json({stats:result[0].stats});
+        }
+        else{
+            res.status(403).json({err:"access denied"})
+        }
+    });
 }
 
 module.exports = {createShortURL,removeURL,getStatsOfShortURL,getFullURL};

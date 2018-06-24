@@ -7,6 +7,7 @@ const router = express.Router();
 
 
 router.post('/', controller.createAccount);
+router.put('/', controller.findAccount);
 
 
 
