@@ -1,4 +1,4 @@
-//TODO implement Data Access Layer
+
 var mongoose = require('mongoose');
 
 /**
