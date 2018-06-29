@@ -18,14 +18,14 @@ const dao = new DAO('mongodb://localhost:27017/database');
  */
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 
 /**
  * Routes
  */
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + '../web/index.html'));
+    res.sendFile(path.join(__dirname,'../frontend/build/index.html'));
 });
 app.use('/api/accounts', accounts);
 app.use('/api/shorten_urls', shorten_urls);
