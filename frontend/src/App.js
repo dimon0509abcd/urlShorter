@@ -3,13 +3,16 @@ import './App.css';
 import Registration from './components/registration/registration';
 import LoginForm from './components/Login_form/LoginForm';
 import UrlCreator from "./components/UrlCreator/UrlCreator";
+import CreatedUrls from './components/CreatedUrls/CreatedUrls';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <LoginForm/>
-        <UrlCreator/>
+          <LoginForm/>
+          <Registration/>
+          <UrlCreator/>
+          <CreatedUrls/>
       </div>
     );
   }

@@ -8,6 +8,12 @@ function createShortURL(req, res) {
         });
 }
 
+function getAllUrls(req,res){
+    console.log(req.body);
+    ShortenURLs.getAllUrls(req.body.creator_id, (err,result) =>{
+        res.status(200).json(result);
+    })
+}
 function removeURL(req, res) {
     ShortenURLs.getStatsOfShortURL(req.params.short, (err, result) => {
         if (req.query.creator_id === result[0].creator_id){
@@ -40,4 +46,4 @@ function getStatsOfShortURL(req, res) {
     });
 }
 
-module.exports = {createShortURL,removeURL,getStatsOfShortURL,getFullURL};
+module.exports = {createShortURL,removeURL,getStatsOfShortURL,getFullURL, getAllUrls};

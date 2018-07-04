@@ -9,6 +9,7 @@ router.get('/:short', controller.getFullURL);
 router.post('/', controller.createShortURL);
 router.delete('/', controller.removeURL);
 router.get('/stats/:short', controller.getStatsOfShortURL);
+router.put('/', controller.getAllUrls);
 
 
 module.exports = router;

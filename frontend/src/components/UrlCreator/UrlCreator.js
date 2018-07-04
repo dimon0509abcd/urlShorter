@@ -8,6 +8,7 @@ class UrlCreator extends Component {
         console.log(full);
         axios.post('/api/shorten_urls/', {
             full:full,
+            creator_id:localStorage.getItem('id'),
         })
             .then(function (response) {
                 console.log(response);
@@ -25,7 +26,7 @@ class UrlCreator extends Component {
                 <h1>Short URL Creator</h1>
                 <input className= 'urlCreator-input' id='url-creator-input-full'/>
                 <button onClick={this.OnClick}>Generate</button>
-                <input className= 'urlCreator-input' id='url-creator-output-short'/>
+                <input className= 'urlCreator-input' id='url-creator-output-short' readOnly/>
             </div>
         );
     }

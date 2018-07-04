@@ -6,6 +6,12 @@ function getFullURL(short, callback){
     });
 }
 
+function getAllUrls(creator_id, callback){
+    Shorten_urls.find({creator_id:creator_id}, (err, result) =>{
+        callback && callback(err, result);
+    })
+}
+
 function createShortURL(creator_id, full, callback) {
     function makeshort() {
         var text = "";
@@ -34,4 +40,4 @@ function getStatsOfShortURL(short, callback){
     })
 }
 
-module.exports = {getFullURL, createShortURL, removeURL, getStatsOfShortURL};
+module.exports = {getFullURL, createShortURL, removeURL, getStatsOfShortURL,getAllUrls};
