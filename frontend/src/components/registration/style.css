@@ -1,0 +1,33 @@
+.registration-content {
+    width: 300px;
+}
+
+.registration-form-group {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.registration-form-group label {
+    padding-right: 15px;
+}
+
+.registration-from-group-button{
+    margin-top : 5px;
+}
+
+.registration-button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.registration-button-container button {
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.Registration{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}

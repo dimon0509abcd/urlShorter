@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Registration from './components/registration/registration';
+import Registration from './components/registration/Registration';
 import LoginForm from './components/Login_form/LoginForm';
 import UrlCreator from "./components/UrlCreator/UrlCreator";
 import CreatedUrls from './components/CreatedUrls/CreatedUrls';

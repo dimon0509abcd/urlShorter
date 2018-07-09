@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-//import './App.css';
+import React, {Component} from 'react';
+import './style.css';
 import axios from 'axios';
 
 class Registration extends Component {
@@ -23,13 +23,26 @@ class Registration extends Component {
     render() {
         return (
             <div className="Registration">
-                <h1>Registration</h1>
-                <input className= 'Registration_input' id='registration-form-login'/>
-                <input id='registration-form-password'/>
-                <button onClick={this.OnClick}>Register</button>
+                <div className="registration-content">
+                    <div>
+                        <h1>Registration</h1>
+                        <div className="registration-form-group">
+                            <label htmlFor='registration-form-login'>Login: </label>
+                            <input className='Registration_input' id='registration-form-login'/>
+                        </div>
+                        <div className="registration-form-group">
+                            <label htmlFor='registration-form-password'>Password: </label>
+                            <input id='registration-form-password'/>
+                        </div>
+                    </div>
+                    <div className='registration-button-container'>
+                        <button onClick={this.OnClick}>Register</button>
+                    </div>
+                </div>
             </div>
         );
     }
 
 }
+
 export default Registration;

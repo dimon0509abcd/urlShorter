@@ -16,8 +16,8 @@ function getAllUrls(req,res){
 }
 function removeURL(req, res) {
     ShortenURLs.getStatsOfShortURL(req.params.short, (err, result) => {
-        if (req.query.creator_id === result[0].creator_id){
-            ShortenURLs.removeURL(req.body.short, (err, result) => {
+        if (req.params.creator_id === result[0].creator_id){
+            ShortenURLs.removeURL(req.params.short, (err, result) => {
                 res.status(200).json(result);
             });
         }
