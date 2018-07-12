@@ -53,14 +53,13 @@ class CreatedUrls extends Component {
                 <input className= 'created-urls-list' value={full} readOnly/>
                 <input className= 'created-urls-list' value={short} readOnly/>
                 <input className= 'created-urls-list' value={stats} readOnly/>
-                <button onClick={this.onClick.bind(this, short)}>remove</button>
             </div>
         )
     }
     render(){
         console.log(this.state.data);
         return (
-            <div className="created-urls">
+            <div className="CreatedUrls">
                 {this.state.data.map((element)=>{
                     return this.renderLine(element.full,element.short,element.stats)
                 })}
