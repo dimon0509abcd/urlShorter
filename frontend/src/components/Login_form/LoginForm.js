@@ -37,7 +37,7 @@ class LoginForm extends Component {
 
     render(){
         return (
-            <div className="login-form">
+            <div className="LoginForm">
                 <input className= 'login-input' id='login-form-login'/>
                 <input id='login-form-password'/>
                 <button onClick={this.OnClick.bind(this)}>LogIn</button>

@@ -7,10 +7,12 @@ import CreatedUrls from './components/CreatedUrls/CreatedUrls';
 
 class App extends Component {
   render() {
-    return (
+      const isVisible = localStorage.getItem('id')!==null;
+      console.log(isVisible);
+      return (
       <div className="App">
-          <LoginForm/>
-          <Registration/>
+          {isVisible === false &&<LoginForm/>}
+          {isVisible === false &&<Registration/>}
           <UrlCreator/>
           <CreatedUrls/>
       </div>
